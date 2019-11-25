@@ -1,0 +1,28 @@
+.guestsList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column-reverse;
+
+  li {
+    border: 1px solid rgb(219,112,147);
+    padding: 0 20px;
+    transition: background-color linear 150ms;
+    background: rgba(0, 0, 0, 0);
+    cursor: pointer;
+
+    + li {
+      margin-bottom: 20px;
+    }
+
+    &.going {
+      padding: 0 20px;
+      width: 100%;
+      background: rgb(152,251,152);
+    }
+
+    &:hover {
+      background: rgb(255,239,213);
+    }
+  }
+}

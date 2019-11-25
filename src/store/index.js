@@ -8,7 +8,7 @@ import saga from './saga';
 export const sagaMiddleware = createSagaMiddleware()
 
 const rootReducer = combineReducers({
-    reducer,
+    guestsState: reducer,
     form: formReducer,
 });
 
