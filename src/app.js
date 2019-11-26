@@ -25,24 +25,26 @@ class App extends React.Component {
   }
 
   render() {
-    return <React.Fragment>
-      <AppHeader />
-      <h2>Invite Guest</h2>
-      <GuestForm initialValues={initialFormState} handleSubmit={this.handleSubmit}/>
-      <h2>Guests</h2>
-      <GuestsList />
-    </React.Fragment>;
+    return (
+      <React.Fragment>
+        <AppHeader />
+        <h2>Invite Guest</h2>
+        <GuestForm initialValues={initialFormState}
+                   handleSubmit={this.handleSubmit}/>
+        <h2>Guests</h2>
+        <GuestsList />
+      </React.Fragment>
+    );
   }
 }
 
 const mapStateToProps = state => ({
-    formStates:  getFormValues('makeGuest')(state)
+    formStates: getFormValues('makeGuest')(state),
 });
 
 const mapDispatchToProps = dispatch => ({
     simpleAction: (values) => dispatch(simpleAction(values))
 });
-
 
 export default connect(
   mapStateToProps,

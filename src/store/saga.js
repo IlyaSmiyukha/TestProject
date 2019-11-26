@@ -13,6 +13,8 @@ const makeGuest = ({name, isGoing, food}) => {
 }};
 
 function* simpleAction(action) {
+  yield  delay(1000);
+
   if (Math.random() < 0.5) {
     yield put({ type: SIMPLE_ACTION_SUCCESS,  payload: makeGuest(action.payload) });
   } else {
@@ -21,10 +23,7 @@ function* simpleAction(action) {
 }
 
 export default function* () {
-    // This is your root saga,
-    // it is already running,
     yield all([
         takeEvery(SIMPLE_ACTION_TRIGGER, simpleAction),
     ]);
-
 }

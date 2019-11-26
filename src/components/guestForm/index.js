@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Field, reduxForm } from 'redux-form'
+import Status from '../status'
 
 import './guestForm.scss'
 
@@ -33,28 +34,35 @@ class GuestForm extends React.Component {
       <form onSubmit={this.handleSubmit} className='container'>
         <div className='formGroup'>
           <label htmlFor="name">Name:</label>
-          <Field name="name" component="input" type="text" onChange={this.handleInputChange} />
+          <Field name="name"
+                 component="input"
+                 type="text"
+                 onChange={this.handleInputChange} />
         </div>
         <div className='formGroup'>
           <label htmlFor="isGoing">Is going:</label>
-          <Field name="isGoing" component="input" type="checkbox" onChange={this.handleInputChange} />
+          <Field name="isGoing"
+                 component="input"
+                 type="checkbox"
+                 onChange={this.handleInputChange} />
         </div>
         <div className='formGroup'>
           <label htmlFor="food">Pick your favorite food:</label>
-          <Field name="food" component="select" onChange={this.handleInputChange}>
+          <Field name="food"
+                 component="select"
+                 onChange={this.handleInputChange}>
              <option value="Pizza">Pizza</option>
              <option value="Lime">Lime</option>
              <option value="Coconut">Coconut</option>
              <option value="Mango">Mango</option>
            </Field>
         </div>
+        <Status />
         <button type="submit">Invite</button>
       </form>
     )
   }
 }
-
-
 
 export default reduxForm({
   form: 'makeGuest'
