@@ -16,7 +16,7 @@ class guestsList extends React.Component {
                   <li className={guest.isGoing ? 'going' : ''} key={guest.id}>
                     <p>Name: {guest.name}</p>
                     <p>Will attend: {`${guest.isGoing}`}</p>
-                    <p>Favourite food: {guest.favouriteFood}</p>
+                    <p>Favourite food: {guest.food}</p>
                   </li>
                 )
               })

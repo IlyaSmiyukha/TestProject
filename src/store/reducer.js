@@ -2,7 +2,6 @@ import Immutable from 'seamless-immutable';
 
 import { SIMPLE_ACTION_TRIGGER, SIMPLE_ACTION_SUCCESS,  SIMPLE_ACTION_FAILURE } from './actionTypes';
 
-
 const initialState = Immutable({
     guests: [
         {
@@ -10,14 +9,14 @@ const initialState = Immutable({
             timestamp: 1557928401103,
             name: 'Bob',
             isGoing: true,
-            favouriteFood: 'Pizza',
+            food: 'Pizza',
         },
         {
             id: 2,
             timestamp: 1557928430870,
             name: 'Lara',
             isGoing: false,
-            favouriteFood: 'Mango',
+            food: 'Mango',
         },
     ],
     loading: false,
@@ -32,13 +31,13 @@ export default (state = initialState, { type, payload }) => {
             return state.setIn(['loading', ], false).setIn(['message'], 'Failed to invite guest ' + payload)
         case SIMPLE_ACTION_SUCCESS:
             return state.merge({
-                guests: [
-                  ...state.guests,
-                  ...payload
-                ],
-                loading: false,
-                message: 'Succesfuly invited guest ' + payload.name
-            })
+                  guests: [
+                    ...state.guests,
+                    payload
+                  ],
+                  loading: false,
+                  message: 'Succesfuly invited guest ' + payload.name
+              }, {deep: true})
         default:
             return state
     }

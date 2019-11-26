@@ -1,0 +1,29 @@
+$btnColor: rgb(255,182,193);
+
+form {
+  border: 1px solid rgb(238,232,170);
+  padding: 20px;
+  background-color: rgb(250,235,215);
+
+  .formGroup {
+    margin-bottom: 18px;
+  }
+
+  button {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: $btnColor;
+    padding: 0 10px;
+    font-size: 14px;
+    color: #000;
+    height: 37px;
+    line-height: 37px;
+    transition: background-color .1s;
+    cursor: pointer;
+
+    &:hover {
+      background: darken($btnColor, 10%);
+    }
+  }
+}
