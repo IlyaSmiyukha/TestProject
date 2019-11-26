@@ -2,23 +2,30 @@ $btnColor: rgb(255,182,193);
 
 form {
   border: 1px solid rgb(238,232,170);
-  padding: 20px;
+  padding: 1.5rem;
   background-color: rgb(250,235,215);
 
   .formGroup {
-    margin-bottom: 18px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
   }
+
+  label {
+    margin-right: .5rem;
+  }
+
 
   button {
     width: 100%;
     border: none;
     outline: none;
     background-color: $btnColor;
-    padding: 0 10px;
-    font-size: 14px;
+    padding: 0 .5rem;
+    font-size: 1rem;
     color: #000;
-    height: 37px;
-    line-height: 37px;
+    height: 2rem;
+    line-height: 2rem;
     transition: background-color .1s;
     cursor: pointer;
 
